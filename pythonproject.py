@@ -2,15 +2,19 @@ import time
 import pandas as pd
 import numpy as np
 
+<<<<<<< HEAD
 
 # Load data for selected city into a DataFrame
 df = pd.read_csv(CITY_DATA[city])
 
+=======
+>>>>>>> refactoring
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
 def get_filters():
+<<<<<<< HEAD
     
     """
     Asks user to specify a city, month, and day to analyze.
@@ -36,11 +40,36 @@ def get_filters():
     day=input('enter day: ').lower()
     while day not in ['monday','tuesday','wednesday','thursday','friday','saturday','sunday','all']:
      day=input('please enter valid day (monday, tuesday, ..., sunday, all): ').lower()
+=======
+    """
+    Asks user to specify a city, month, and day to analyze.
+    """
+    print('Hello! Let\'s explore some US bikeshare data!')
+
+    city = get_valid_input(
+        'Name of the city to analyze (chicago, new york city, washington): ',
+        CITY_DATA.keys()
+    )
+
+    month = get_valid_input(
+        'Enter month (january, february, march, april, may, june, all): ',
+        ['january','february','march','april','may','june','all']
+    )
+
+    day = get_valid_input(
+        'Enter day (monday, tuesday, wednesday, thursday, friday, saturday, sunday, all): ',
+        ['monday','tuesday','wednesday','thursday','friday','saturday','sunday','all']
+    )
+>>>>>>> refactoring
 
     print('-'*40)
     return city, month, day
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> refactoring
 def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
@@ -52,10 +81,16 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
+<<<<<<< HEAD
     df=pd.read_csv(CITY_DATA[city])
     df['Start Time']=pd.to_datetime(df['Start Time'])
     df['month']=df['Start Time'].dt.month
     df['day']=df['Start Time'].dt.day_name()
+=======
+    df = pd.read_csv(CITY_DATA[city])
+    df = add_time_columns(df)
+
+>>>>>>> refactoring
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
@@ -142,6 +177,7 @@ def user_stats(df):
 
 
     # TO DO: Display counts of gender
+<<<<<<< HEAD
     try:
      print(df['Gender'].value_counts())
     except KeyError:
@@ -157,6 +193,23 @@ def user_stats(df):
      print('Most common year:', int(df['Birth Year'].mode()[0]))
     except KeyError:
      print('No Birth Year data available for this city.')
+=======
+    # Display counts of gender (if available)
+    if 'Gender' in df.columns:
+        print('\nGender counts:')
+        print(df['Gender'].value_counts())
+    else:
+        print('\nNo Gender data available for this city.')
+
+    # Display birth year stats (if available)
+    if 'Birth Year' in df.columns:
+        birth_years = df['Birth Year'].dropna()
+        print('Earliest year:', int(birth_years.min()))
+        print('Most recent year:', int(birth_years.max()))
+        print('Most common year:', int(birth_years.mode()[0]))
+    else:
+        print('No Birth Year data available for this city.')
+>>>>>>> refactoring
 
 def main():
     while True:
