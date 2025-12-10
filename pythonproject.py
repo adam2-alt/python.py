@@ -43,10 +43,9 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    df=pd.read_csv(CITY_DATA[city])
-    df['Start Time']=pd.to_datetime(df['Start Time'])
-    df['month']=df['Start Time'].dt.month
-    df['day']=df['Start Time'].dt.day_name()
+    df = pd.read_csv(CITY_DATA[city])
+    df = add_time_columns(df)
+
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
