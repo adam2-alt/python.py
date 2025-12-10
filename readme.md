@@ -2,6 +2,8 @@
 
 This project is a command-line Python application that analyzes bikeshare data for three major US cities: Chicago, New York City, and Washington. Users can filter the data by city, month, and day to view various statistics about bikeshare usage.
 
+This project analyzes bikeshare data for three US cities. It allows users to filter by city, month, and day, and then displays statistics about usage, travel times, and user types
+
 refactoring
 ## datasets
 =======
