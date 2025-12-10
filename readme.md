@@ -25,19 +25,20 @@ You can install the required libraries using:
 ```bash 
 pip install pandas numpy
 ```
-## How to Run 
+## How to Run
 
-To execute the program, run the following command in your terminal:
+Run the script using:
 
-```bash 
+```bash
 python bikeshare.py
-```
-You will be prompted to choose:
 
-- A city (`chicago`,`new york city`,`washington`)
-- A month (January to June or `all`)
-- A day of the week or `all`
+You will be asked to:
 
+Choose a city (Chicago, New York City, Washington)
+
+Choose a month (January to June or 'all')
+
+Choose a day of week or 'all'
 The program will then display: 
 
 - The most frequent times of travel 
