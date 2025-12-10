@@ -2,6 +2,8 @@
 
 This project is a command-line Python application that analyzes bikeshare data for three major US cities: Chicago, New York City, and Washington. Users can filter the data by city, month, and day to view various statistics about bikeshare usage.
 
+This project analyzes bikeshare data for three US cities. It allows users to filter by city, month, and day, and then displays statistics about usage, travel times, and user types
+
 refactoring
 ## datasets
 =======
@@ -23,19 +25,20 @@ You can install the required libraries using:
 ```bash 
 pip install pandas numpy
 ```
-## How to Run 
+## How to Run
 
-To execute the program, run the following command in your terminal:
+Run the script using:
 
-```bash 
+```bash
 python bikeshare.py
-```
-You will be prompted to choose:
 
-- A city (`chicago`,`new york city`,`washington`)
-- A month (January to June or `all`)
-- A day of the week or `all`
+You will be asked to:
 
+Choose a city (Chicago, New York City, Washington)
+
+Choose a month (January to June or 'all')
+
+Choose a day of week or 'all'
 The program will then display: 
 
 - The most frequent times of travel 
